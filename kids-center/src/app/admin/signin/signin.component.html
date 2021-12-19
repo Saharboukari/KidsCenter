@@ -1,0 +1,16 @@
+<div class="signin">
+     <h1>Sign In </h1>
+     <form [formGroup]="form" (submit)="submit()">
+          <div class="form-group">
+               <label for="exampleInputUsername1">Username</label>
+               <input formControlName="username" type="text" class="form-control" id="exampleInputUsername1" placeholder="Username" required>
+          </div>
+          <div class="form-group">
+               <label for="exampleInputPassword1">Password</label>
+               <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Sign In</button>
+          <small id="signupHelp" class="form-text text-muted">Don't have an account ? <span routerLink="/signup">Sign Up</span></small>
+          <label for="errorSignIn" class="form-text error-form">{{result === "Incorrect username/password" ? result : ""}}</label>
+     </form>
+</div>

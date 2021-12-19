@@ -39,10 +39,11 @@ module.exports = {
     }
   },
   update_One: async (req, res, next) => {
+    console.log("request",req.body)
     try {
       const event = await Events.findByIdAndUpdate(
-        req.params.eventId,
-        req.body,
+        {_id:req.body._id},
+        {"$push":{comments:req.body.comment}},
         { new: true }
       );
 

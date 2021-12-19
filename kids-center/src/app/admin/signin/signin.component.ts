@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
-import { SharedService } from 'src/app/shared/shared.service';
+// import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-signin',
@@ -22,7 +22,7 @@ export class SigninComponent implements OnInit {
   constructor(
     private formSignIn: FormBuilder,
     private http      : HttpClient,
-    private shared    : SharedService,
+    // private shared    : SharedService,
     private data      : DataService,
     private route     : Router    
   ) { }
@@ -45,7 +45,7 @@ export class SigninComponent implements OnInit {
           this.result = Response;
           this.data.changeMessage(Response);
           this.route.navigateByUrl('/');
-          this.shared.setuser(this.result);
+          // this.shared.setuser(this.result);
           
         },
         error: error   => {

@@ -87,3 +87,6 @@ p {
     height: 25px;
     border-radius: 50%;
 }
+.c-css-slider {
+	position: relative;
+ }

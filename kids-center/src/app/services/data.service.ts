@@ -18,6 +18,7 @@ export class DataService {
     updatedAt: "",
     user_img: "",
     username: "",
+    fullname: "",
     __v: 0,
     _id: "",
   });

@@ -20,13 +20,21 @@ export class SearchComponent implements OnInit {
       fullname: "",
       specialty: ""
     });
-   
-   this.submit() 
+    this.http.get('http://localhost:8000/services')
+    .subscribe({
+      next:Response => {
+        console.log("response",Response);
+        this.result=Response
+        console.log("result",this.result);
+    },
+      error:error   => console.log("error", error)
+    });
+    
   }
  
   submit(): void {
     console.log(this.form.getRawValue());
-    let params = this.form.getRawValue();
+    let params = this.form.getRawValue()
     // let params = new HttpParams().set("paramName",this.form.city).set("paramName2", paramValue2);
     this.http.get('http://localhost:8000/services',{params})
     .subscribe({

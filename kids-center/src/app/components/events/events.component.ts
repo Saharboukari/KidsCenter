@@ -12,6 +12,7 @@ import { AnyArray } from 'mongoose';
 export class EventsComponent implements OnInit {
   posts:any=[]
   user:any
+  
   constructor(private shared :SharedService ,
     private http :HttpClient,
     private route :Router) { }
@@ -37,7 +38,8 @@ export class EventsComponent implements OnInit {
     this.route.navigateByUrl('/addEvent');
     
   }
-  comments(){
+  comments(post:any){
+    this.shared.setevent(post)
     this.route.navigateByUrl('/comments')
   }
   

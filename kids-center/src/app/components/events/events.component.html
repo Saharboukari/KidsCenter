@@ -33,21 +33,21 @@
 				<div class="col-md-6"*ngFor="let post of posts">
 					<div class="media blog-media">
 						<a><img class="d-flex"
-								src="https://www.atlantaparent.com/wp-content/uploads/2021/07/iStock-861129134-e1630538454158.jpg"
+								src={{post.event_img}}
 								alt="Generic placeholder image"></a>
 						<div class="circle">
 							<h5 class="day">{{post.date.slice(8,10)}}</h5>
 							<span class="month">{{post.date.slice(5,7)}}</span>
 						</div>
 						<div class="media-body">
-							<a href="">
-								<h5 class="mt-0">{{post.description}}</h5>
+							<a (click)='comments(post)'>{{post.title}}
+								<!-- <h5 class="mt-0">{{post.title}}</h5> -->
 							</a>
-							{{post.description}}
-							<a class="post-link">Read More</a>
+							<!-- {{post.description}} -->
+							<a class="post-link" (click)='comments(post)'>Read More</a>
 							<ul>
-								<li>by: {{post.eventBy.username}}</li>
-								<li class="text-right"><a (click)='comments()'>07 comments</a>
+								<li>by: {{post.eventBy}}</li>
+								<li class="text-right"><a (click)='comments(post)'>{{post.comments.length}} comments</a>
 								</li>
 								<li class="text-right"><a>Add to My fovourite
 										list</a></li>

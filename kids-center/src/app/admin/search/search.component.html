@@ -1,8 +1,8 @@
 <div class="search">
   <div class="searchField">
     <form [formGroup]="form" (submit)="submit()">
-      <input formControlName="fullname" class="searchinp" type="text" value="" />
-      <select formControlName="city" name="City" class="searchsel" value="" size="1">
+      <input formControlName="fullname" type="text" value="" />
+      <select formControlName="city" name="City" value="" size="1">
         <option value="">City</option>
         <option value="Tunis">Tunis</option>
         <option value="Ariana">Ariana</option>
@@ -30,7 +30,7 @@
         <option value="Zaghouan">Zaghouan</option>
         <option value="Kébili">Kébili</option>
       </select>
-      <select formControlName="specialty" size="1" name="specialty" class="searchsel" value="">
+      <select formControlName="specialty" size="1" name="specialty" value="">
         <option value="">Specialty</option>
         <option value="English">English</option>
         <option value="Français">Français</option>
@@ -41,21 +41,22 @@
         <option value=""></option>
       </select>
 
-      <button type="submit" class="searchbtn">Search</button>
+      <button type="submit">Search</button>
+     
     </form>
-  </div>
-    <div class="result"  >
-                  <div class="card" style="width: 18rem;" *ngFor="let provider of this.result"  >
-                    <img class="card-img-top" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Card image cap">
-                    <div class="card-body">
-                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item">{{provider.fullname}}</li>
-                        <li class="list-group-item">Specialty : {{provider.specialty}}</li>
-                        <li class="list-group-item">City : {{provider.city}}</li>
-                        <li class="list-group-item">Email : {{provider.email}}</li>
-                        <li class="list-group-item">Phone : {{provider.phone}}</li>
-                      </ul>
-                      <a [routerLink]="['/userprofile', provider._id]" class="btn btn-primary">Profile</a>
-        </div>     
+    <div class='card' >
+      <div>
+      <ul >
+          <li>
+      <img   src="" alt="Image" />
+      </li>
+      <li *ngFor="let provider of this.result" >
+      <h3>{{provider.fullname}}</h3>
+      <h3>{{provider.city}}</h3>
+      <h3>{{provider.phone}}</h3>
+      </li>
+      </ul>
+    </div>
+      </div>
 </div>
   </div>

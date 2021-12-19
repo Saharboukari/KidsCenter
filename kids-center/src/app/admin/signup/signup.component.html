@@ -1,0 +1,91 @@
+<div class="signup">
+     <h1>Sign Up</h1>
+     <form [formGroup]="form" (submit)="submit()">
+          <div class="form-row">
+               <div class="form-category">
+                    You are :
+                    <div class="form-check form-check-inline">
+                         <input formControlName="category" ngModel="category"  class="form-check-input m-2" type="radio" name="category" id="inlineRadio1" value="parent" checked>
+                         <label class="form-check-label" for="inlineRadio1">Parent</label>
+                    </div>
+                    <div  (click)="show()" class="form-check form-check-inline">
+                         <input formControlName="category" ngModel="category" class="form-check-input m-2" type="radio" name="category" id="inlineRadio2" value="provider">
+                         <label class="form-check-label" for="inlineRadio2">Service Provider</label>
+                    </div>
+               </div> 
+               <div class="form-group col-md-6"  *ngIf="showSpecialty">
+                    <label for="inputSpecialty">Specialty</label>
+                    <select class="form-control" formControlName="specialty" id="inputSpecialty" size="1" name="specialty">
+                         <option selected>Specialty</option>
+                         <option value="English">English</option>
+                         <option value="Français">Français</option>
+                         <option value="Arabe">Arabe</option>
+                         <option value="Math">Math</option>
+                         <option value="Science">Science</option>
+                         <option value="Physics">Physics</option>
+                    </select>
+               </div>
+               <div class="form-group">
+                    <label for="inputFullname">Full Name</label>
+                    <input formControlName="fullname" type="text" class="form-control" id="inputFullname" placeholder="Full Name">
+               </div>
+               <div class="form-group">
+                    <label for="inputAddress">Username</label>
+                    <input formControlName="username" type="text" class="form-control" id="inputUsername" placeholder="username">
+               </div>
+               <div class="form-group">
+                    <label for="inputEmail4">Email</label>
+                    <input formControlName="email" type="email" class="form-control" id="inputEmail4" placeholder="Email">
+               </div>
+               <div class="form-group">
+                    <label for="inputPassword4">Password</label>
+                    <input formControlName="password" type="password" class="form-control" id="inputPassword4" placeholder="Password">
+               </div>
+          </div>
+          <div class="form-group">
+               <label for="inputAddress">Phone</label>
+               <input formControlName="phone" type="text" class="form-control" id="inputPhone" placeholder="phone number">
+          </div>
+          <div class="form-group">
+               <label for="inputAddress">Address</label>
+               <input formControlName="address" type="email" class="form-control" id="inputAddress" placeholder="Tunisie 4000 Ariana">
+          </div>
+          <div class="form-row">
+               <div class="form-group col-md-6">
+                    <label for="inputState">City</label>
+                    <select formControlName="city" id="inputState" class="form-control">
+                         <option value="">City</option>
+                         <option value="Tunis">Tunis</option>
+                         <option value="Ariana">Ariana</option>
+                         <option value="Ben arous">Ben arous</option>
+                         <option value="Manouba">Manouba</option>
+                         <option value="Sousse">Sousse</option>
+                         <option value="Sfax">Sfax</option>
+                         <option value="Gabes">Gabes</option>
+                         <option value="Médenine">Médenine</option>
+                         <option value="Mahdia">Mahdia</option>
+                         <option value="Béja">Béja</option>
+                         <option value="Bizerte">Bizerte</option>
+                         <option value="Gafsa">Gafsa</option>
+                         <option value="Jendouba">Jendouba</option>
+                         <option value="Kairouan">Kairouan</option>
+                         <option value="Kasserine">Kasserine</option>
+                         <option value="Kef">Le Kef</option>
+                         <option value="Monastir">Monastir</option>
+                         <option value="Nabeul">Nabeul</option>
+                         <option value="Sidi Bouzid">Sidi Bouzid</option>
+                         <option value="Siliana">Siliana</option>
+                         <option value="Tataouine">Tataouine</option>
+                         <option value="Tozeur">Tozeur</option>
+                         <option value="Zaghouan">Zaghouan</option>
+                         <option value="Zaghouan">Zaghouan</option>
+                         <option value="Kébili">Kébili</option>
+                    </select>
+               </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Sign up</button>
+          <small id="signupHelp" class="form-text text-muted">Already have an account ? <span routerLink="/signin">Sign In</span></small>
+
+     </form>
+     
+</div>

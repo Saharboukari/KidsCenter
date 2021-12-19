@@ -5,24 +5,24 @@ import { DataService } from 'src/app/services/data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  selector: 'app-userprofile',
+  templateUrl: './userprofile.component.html',
+  styleUrls: ['./userprofile.component.css']
 })
-export class ProfileComponent implements OnInit {
-  user:any;
-  subscription:Subscription;
+export class UserprofileComponent implements OnInit {
+  user: any;
+  subscription: Subscription;
   provider: any;
   isProvider: boolean;
 
   constructor(
-      private http: HttpClient,
-      private data: DataService,
-      private activatedRoute: ActivatedRoute
-    ) { }
+    private http: HttpClient,
+    private data: DataService,
+    private activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
-      this.subscription = this.data.currentMessage.subscribe((message: any) => {
+    this.subscription = this.data.currentMessage.subscribe((message: any) => {
       this.user = message;
       console.log("profile component ", this.user);
     });
@@ -43,13 +43,13 @@ export class ProfileComponent implements OnInit {
     this.isProvider = this.userId();
   }
 
-  userId(){
+  userId() {
     this.activatedRoute.params.subscribe(params => {
       let id = params['id'];
       console.log(`${id}`);
       return id ? true : false;
     });
-    return false;  
+    return false;
   }
 
 }

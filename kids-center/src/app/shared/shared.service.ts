@@ -6,6 +6,7 @@ import { Observable, observable } from 'rxjs';
 })
 export class SharedService {
   user:any
+  event:any
   
   constructor(private http:HttpClient) { }
   setuser(data:any){
@@ -14,9 +15,13 @@ export class SharedService {
   getuser(){
     return this.user
   }
-  // getevents(): Observable<Events[]>{
-  //   return this.http.get <Events[]>()
-  // }
+  setevent(data:any){
+    this.event=data
+  }
+  getevent(){
+    return this.event
+  }
+  
     
   
 }

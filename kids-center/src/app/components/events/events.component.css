@@ -136,7 +136,7 @@ body{margin-top:20px;}
         padding: 30px 20px 10px;
     }
 }
-.media.blog-media .media-body h5 {
+.media.blog-media .media-body {
     transition: color 0.3s ease;
     margin-bottom: 15px;
 }
