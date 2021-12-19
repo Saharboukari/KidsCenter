@@ -25,7 +25,7 @@ const routes: Routes = [
   {path:'events', component: EventsComponent},
   {path:'profile', component: ProfileComponent},
 
-  {path:'editprofile', component: EditprofileComponent}
+  {path:'editprofile', component: EditprofileComponent},
 
   {path:'addEvent', component: AddEventComponent},
   {path:'comments', component:  EventCommentsComponent }

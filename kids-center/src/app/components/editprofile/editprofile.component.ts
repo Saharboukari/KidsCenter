@@ -45,7 +45,7 @@ export class EditprofileComponent implements OnInit {
     .subscribe({
       next:Response => {
         console.log("Edited", Response);
-        this.route.navigateByUrl('profile');
+        this.route.navigateByUrl('signin');
       },
       error:error   => console.log("error", error)
     });
